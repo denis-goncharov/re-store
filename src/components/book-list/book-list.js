@@ -14,7 +14,7 @@ import "./book-list.css"
 const BookList = ({ books, onAddedToCart }) => {
   return (
     <div className="book-list">
-      {books.map((book) => {
+      {books.map(book => {
         return (
           <BookListItem
             key={book.id}

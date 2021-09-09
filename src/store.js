@@ -3,12 +3,12 @@ import thunkMiddleware from "redux-thunk"
 
 import reducer from "./reducers"
 
-const logMiddleware = () => (next) => (action) => {
+const logMiddleware = () => next => action => {
   console.log(action.type)
   return next(action)
 }
 
-const stringMiddleware = () => (next) => (action) => {
+const stringMiddleware = () => next => action => {
   if (typeof action === "string") {
     return next({
       type: action,

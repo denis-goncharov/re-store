@@ -56,7 +56,7 @@ const updateOrder = (state, bookId, quantity) => {
     bookList: { books },
     shoppingCart: { cartItems },
   } = state
-  const book = books.find((book) => book.id === bookId)
+  const book = books.find(book => book.id === bookId)
   const itemIndex = cartItems.findIndex(({ id }) => id === bookId)
   const item = cartItems[itemIndex]
   const newCartItems = updateCartItems(

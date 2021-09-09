@@ -1,4 +1,4 @@
-const priceCentFormat = (cents) => {
+const priceCentFormat = cents => {
   if (cents == null || cents === 0) return "00"
   if (cents < 10) {
     return `0${cents}`
@@ -6,7 +6,7 @@ const priceCentFormat = (cents) => {
   return cents
 }
 
-const priceFormat = (price) => {
+const priceFormat = price => {
   if (price == null) return "0"
   if (price === Math.floor(price)) return `${price}.00`
   const { dollars, cents } = splitPrice(price)
@@ -14,7 +14,7 @@ const priceFormat = (price) => {
   return `${dollars}.${priceCentFormat(cents)}`
 }
 
-const splitPrice = (price) => {
+const splitPrice = price => {
   const dollarValue = Math.floor(price)
   const centValue = Math.floor((price - dollarValue) * 100)
   return {
@@ -23,7 +23,7 @@ const splitPrice = (price) => {
   }
 }
 
-const roundNum = (num) => {
+const roundNum = num => {
   return Math.round((num + Number.EPSILON) * 100) / 100
 }
 
